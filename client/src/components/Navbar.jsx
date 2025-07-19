@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { assets, menuLinks } from "../assets/assets";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -48,6 +48,13 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+      <button
+        className="cursor-pointer sm:hidden"
+        aria-label="Menu"
+        onClick={() => setOpen(!open)}
+      >
+        <img src={open ? assets.close_icon : assets.menu_icon} alt="" />
+      </button>
     </div>
   );
 };
