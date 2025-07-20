@@ -1,11 +1,25 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
-import { useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Home from "./Home";
+import CarDetails from "./CarDetails";
+import Cars from "./Cars";
+import MyBookings from "./MyBookings";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const isOwnerPath = useLocation().pathname.startsWith("/owner");
-  return <>{!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}</>;
+  return (
+    <>
+      {!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="car-details" element={<CarDetails />} />
+        <Route path="/cars" element={<Cars />} />
+        <Route path="/my-bookings" element={<MyBookings />} />
+      </Routes>
+    </>
+  );
 };
 
 export default App;
