@@ -4,7 +4,7 @@ import { assets } from "../assets/assets";
 const Footer = () => {
   return (
     <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-gray-500">
-      <div className="flex flex-wrap justify-between items-start gap-8 pb-6 border-borderColor">
+      <div className="flex flex-wrap justify-between items-start gap-8 pb-6 border-borderColor border-b">
         <div className="max-w-80">
           <img src={assets.logo} alt="logo" className="h-8 md:h-9" />
           <p className="max-w-80 mt-3">
@@ -44,82 +44,55 @@ const Footer = () => {
         </div>
 
         <div>
-          <p className="text-lg text-gray-800">COMPANY</p>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
+          <h2 className="text-base font-medium uppercase text-gray-800">
+            Quick Links
+          </h2>
+          <ul className="mt-3 flex flex-col gap-1.5">
             <li>
-              <a href="#">About</a>
+              <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">Careers</a>
+              <a href="#">Browse Cars</a>
             </li>
             <li>
-              <a href="#">Press</a>
+              <a href="#">List Your Car</a>
             </li>
             <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">Partners</a>
+              <a href="#">About Us</a>
             </li>
           </ul>
         </div>
-
         <div>
-          <p className="text-lg text-gray-800">SUPPORT</p>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
+          <h2 className="text-base font-medium uppercase text-gray-800">
+            Resources
+          </h2>
+          <ul className="mt-3 flex flex-col gap-1.5">
             <li>
               <a href="#">Help Center</a>
             </li>
             <li>
-              <a href="#">Safety Information</a>
+              <a href="#">Terms of Service</a>
             </li>
             <li>
-              <a href="#">Cancellation Options</a>
+              <a href="#">Privacy Policy</a>
             </li>
             <li>
-              <a href="#">Contact Us</a>
-            </li>
-            <li>
-              <a href="#">Accessibility</a>
+              <a href="#">Insurance</a>
             </li>
           </ul>
         </div>
-
-        <div className="max-w-80">
-          <p className="text-lg text-gray-800">STAY UPDATED</p>
-          <p className="mt-3 text-sm">
-            Subscribe to our newsletter for inspiration and special offers.
-          </p>
-          <div className="flex items-center mt-4">
-            <input
-              type="text"
-              className="bg-white rounded-l border border-gray-300 h-9 px-3 outline-none"
-              placeholder="Your email"
-            />
-            <button className="flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r">
-              {/* Arrow icon */}
-              <svg
-                className="w-4 h-4 text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 12H5m14 0-4 4m4-4-4-4"
-                />
-              </svg>
-            </button>
-          </div>
+        <div>
+          <h2 className="text-base font-medium uppercase text-gray-800">
+            Contact
+          </h2>
+          <ul className="mt-3 flex flex-col gap-1.5">
+            <li>1234 Luxury Drive</li>
+            <li>San Francisco, CA 94107</li>
+            <li>+13 3839 28392</li>
+            <li>info@example.com</li>
+          </ul>
         </div>
       </div>
-      <hr className="border-gray-300 mt-8" />
       <div className="flex flex-col md:flex-row gap-2 items-center justify-between py-5">
         <p>
           © {new Date().getFullYear()}{" "}
@@ -129,9 +102,11 @@ const Footer = () => {
           <li>
             <a href="#">Privacy</a>
           </li>
+          <li>|</li>
           <li>
             <a href="#">Terms</a>
           </li>
+          <li>|</li>
           <li>
             <a href="#">Sitemap</a>
           </li>
