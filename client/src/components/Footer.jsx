@@ -19,6 +19,27 @@ const Footer = () => {
                 className="w-5 h-5"
               />
             </a>
+            <a href="#">
+              <img
+                src={assets.instagram_logo}
+                alt="instagram logo"
+                className="w-5 h-5"
+              />
+            </a>
+            <a href="#">
+              <img
+                src={assets.twitter_logo}
+                alt="twitter logo"
+                className="w-5 h-5"
+              />
+            </a>
+            <a href="#">
+              <img
+                src={assets.gmail_logo}
+                alt="gmail logo"
+                className="w-5 h-5"
+              />
+            </a>
           </div>
         </div>
 
