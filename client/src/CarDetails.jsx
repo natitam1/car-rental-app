@@ -19,12 +19,13 @@ const CarDetails = () => {
   return car ? (
     <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-16">
       <button
-        className="flex items-center gap-2 mb-6 text-gray-500 cursor-pointer hover:gap-3"
+        className="flex items-center gap-2 mb-6 text-gray-500 cursor-pointer"
         onClick={() => navigate(-1)}
       >
         <img src={assets.arrow_icon} className="rotate-180 opacity-65" alt="" />
         Back to all cars
       </button>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12"></div>
     </div>
   ) : (
     <p>Loading...</p>
