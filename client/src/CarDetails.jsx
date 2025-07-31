@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { assets, dummyCarData } from "./assets/assets";
+import Loader from "./components/Loader";
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -81,6 +82,7 @@ const CarDetails = () => {
                 ].map((item) => (
                   <li key={item} className="flex items-center text-gray-500">
                     <img src={assets.check_icon} className="h-4 mr-2" alt="" />
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -90,7 +92,7 @@ const CarDetails = () => {
       </div>
     </div>
   ) : (
-    <p>Loading...</p>
+    <Loader />
   );
 };
 
