@@ -8,11 +8,7 @@ const CarDetails = () => {
   const [car, setCar] = useState(null);
 
   useEffect(() => {
-    console.log("URL param id:", id);
-    console.log("dummyCarData:", dummyCarData);
-
     const found = dummyCarData.find((car) => car._id === id);
-    console.log("Found car:", found);
     setCar(found);
   }, [id]);
 
@@ -25,7 +21,16 @@ const CarDetails = () => {
         <img src={assets.arrow_icon} className="rotate-180 opacity-65" alt="" />
         Back to all cars
       </button>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12"></div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* Left Car image and details  */}
+        <div className="lg:col-span-2">
+          <img
+            src={car.image}
+            alt=""
+            className="w-full h-auto md:max-h-100 object-cover rounded-xl mb-6 shadow-md"
+          />
+        </div>
+      </div>
     </div>
   ) : (
     <p>Loading...</p>
