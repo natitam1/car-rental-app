@@ -22,6 +22,7 @@ const Sidebar = () => {
                   "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
             }
             alt=""
+            className="h-9 w-9 rounded-full mx-auto md:h-14 md:w-14"
           />
           <input
             type="file"
@@ -36,12 +37,11 @@ const Sidebar = () => {
         </label>
       </div>
       {image && (
-        <button>
+        <button className="absolute top-0 right-0 flex p-2 gap-1 bg-primary/10 text-primary cursor-pointer">
           Save{" "}
           <img
             src={assets.check_icon}
             width={13}
-            className="absolute top-0 right-0 flex p-2 gap-1 bg-primary/10 text-primary cursor-pointer"
             alt=""
             onClick={updateImage}
           />

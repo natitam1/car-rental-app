@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarOwner from "../../components/owner/NavbarOwner";
-import { Sidebar } from "lucide-react";
 import { Outlet } from "react-router-dom";
+import Sidebar from "../../components/owner/Sidebar";
 
 const Layout = () => {
   return (
