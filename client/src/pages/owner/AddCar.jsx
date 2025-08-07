@@ -29,18 +29,33 @@ const AddCar = () => {
         className="flex flex-col gap-5 text-gray-500 text-sm mt-6 max-w-xl"
       >
         {/* Car Image */}
-        <div>
+        <div className="flex items-center gap-2 w-full">
           <label htmlFor="car-image">
             <img
               src={image ? URL.createObjectURL(image) : assets.upload_icon}
               alt=""
               className="h-14 rounded cursor-pointer"
             />
-            <input type="file" id="car-image" accept="image/* hidden" />
-            <p className="text-sm text-gray-500">
-              Upload a picture of your car
-            </p>
+            <input
+              type="file"
+              id="car-image"
+              accept="image/*"
+              hidden
+              onChange={(e) => setImage(e.target.files[0])}
+            />
           </label>
+          <p className="text-sm text-gray-500">Upload a picture of your car</p>
+        </div>
+        {/* Car Bran and Model */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col w-full">
+            <label>Brand</label>
+            <input
+              type="text"
+              placeholder="e.g. BMW,Mercedes, Audi..."
+              required
+            />
+          </div>
         </div>
       </form>
     </div>
