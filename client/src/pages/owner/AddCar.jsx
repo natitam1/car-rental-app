@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import Title from "../../components/owner/Title";
+import { assets } from "../../assets/assets";
 const AddCar = () => {
   const [image, setImage] = useState(null);
   const [car, setCar] = useState({
@@ -14,7 +15,36 @@ const AddCar = () => {
     location: "",
     description: "",
   });
-  return <div>AddCar</div>;
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+  };
+  return (
+    <div className="px-4 py-10 md:px-10 flex-1">
+      <Title
+        title="Add New Car"
+        subTitle="Fill in details to list a new car for booking, including pricing, availability, and car specification."
+      />
+      <form
+        onSubmit={onSubmitHandler}
+        className="flex flex-col gap-5 text-gray-500 text-sm mt-6 max-w-xl"
+      >
+        {/* Car Image */}
+        <div>
+          <label htmlFor="car-image">
+            <img
+              src={image ? URL.createObjectURL(image) : assets.upload_icon}
+              alt=""
+              className="h-14 rounded cursor-pointer"
+            />
+            <input type="file" id="car-image" accept="image/* hidden" />
+            <p className="text-sm text-gray-500">
+              Upload a picture of your car
+            </p>
+          </label>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default AddCar;
