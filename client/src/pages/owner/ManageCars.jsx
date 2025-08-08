@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { dummyCarData } from "../../assets/assets";
+import { assets, dummyCarData } from "../../assets/assets";
 import Title from "../../components/owner/Title";
 
 const ManageCars = () => {
+  const currency = import.meta.env.VITE_CURRENCY;
   const [cars, setCars] = useState([]);
 
   const fetchOwnerCars = async () => {
@@ -46,6 +47,36 @@ const ManageCars = () => {
                       {car.seating_capacity} • {car.transmission}
                     </p>
                   </div>
+                </td>
+                <td className="p-3 max-md:hidden">{car.category}</td>
+                <td className="p-3">
+                  {currency}
+                  {car.pricePerDay}
+                </td>
+                <td className="p-3 max-md:hidden">
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs ${
+                      car.isAvaliable
+                        ? "bg-green-100 text-green-500"
+                        : "bg-red-100 text-red-500"
+                    }`}
+                  >
+                    {car.isAvaliable ? "Available" : "Unavailable"}
+                  </span>
+                </td>
+                <td className="flex items-center p-3">
+                  <img
+                    src={
+                      car.isAvaliable ? assets.eye_close_icon : assets.eye_icon
+                    }
+                    alt=""
+                    className="cursor-pointer"
+                  />
+                  <img
+                    src={assets.delete_icon}
+                    className="cursor-pointer"
+                    alt=""
+                  />
                 </td>
               </tr>
             ))}
